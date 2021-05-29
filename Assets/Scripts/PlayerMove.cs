@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float playerSpeed = 20f;
+    public float playerSpeed = 15f;
+    public float momentum = 5f;
+
     private CharacterController beeCC;
     public Animator camAnim;
     private bool isWalking;
@@ -25,16 +27,24 @@ public class PlayerMove : MonoBehaviour
     {
         GetInput();
         MovePlayer();
-        CheckForHeadbob();
 
         camAnim.SetBool("IsWalking", isWalking);
     }
 
     void GetInput()
     {
-        inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        inputVector.Normalize();
-        inputVector = transform.TransformDirection(inputVector);
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            isWalking = true;
+            inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            inputVector.Normalize();
+            inputVector = transform.TransformDirection(inputVector);
+        }
+        else
+        {
+            isWalking = false;
+            inputVector = Vector3.Lerp(inputVector, Vector3.zero, momentum * Time.deltaTime);
+        }
 
         movementVector = (inputVector * playerSpeed) + (Vector3.up * graviBee);
     }
@@ -42,13 +52,5 @@ public class PlayerMove : MonoBehaviour
     void MovePlayer()
     {
         beeCC.Move(movementVector * Time.deltaTime);
-    }
-
-    private void CheckForHeadbob()
-    {
-        if (beeCC.velocity.magnitude > .1f)
-            isWalking = true;
-        else
-            isWalking = false;
     }
 }
