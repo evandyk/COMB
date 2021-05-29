@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
         if(enemyHealth <= 0)
         {
             enemyManager.RemoveEnemy(this);
-            if(gameObject.tag == "Parasitic")
+            if (gameObject.tag == "Parasitic")
+                SpawnLarva();
             Destroy(gameObject);
         }
     }
@@ -37,5 +38,10 @@ public class Enemy : MonoBehaviour
     {
         for(int i = 0; i < spawnCount; i++)
             Instantiate(larva, transform.position, transform.rotation);
+    }
+
+    public void SpawnWasp()
+    {
+        Debug.Log("Spawn Wasp!");
     }
 }
