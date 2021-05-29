@@ -20,6 +20,7 @@ public class WaspAggro : MonoBehaviour
     //Attacking
     public float AtkCoolDown;
     bool atkOnCoolDown;
+    public GameObject projectile;
 
     //States
     public float sightRange, atkRange;
@@ -68,12 +69,19 @@ public class WaspAggro : MonoBehaviour
 
     private void Attack()
     {
+        float spawnDistance = 1.0f;
+        float force = 3000.0f;
         //Stop running and now attack
         agent.SetDestination(transform.position);
-        transform.LookAt(beeKeeper);
+
         if (!atkOnCoolDown)
         {
-            ///INSERT ATTACK CODE HERE
+            //INSERT ATTACK CODE HERE
+            transform.LookAt(beeKeeper);
+
+            Rigidbody rb = Instantiate(projectile, transform.position + spawnDistance * transform.forward, transform.rotation).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * force);
+            rb.AddForce(transform.up * 3f, ForceMode.Impulse);
 
             atkOnCoolDown = true;
             Invoke(nameof(ResetAtk), AtkCoolDown);

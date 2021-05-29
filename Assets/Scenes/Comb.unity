@@ -1530,8 +1530,9 @@ MonoBehaviour:
   patrolPt: {x: 1, y: 1, z: 15}
   patrolPtRange: 15
   AtkCoolDown: 1
+  projectile: {fileID: 7758856403352353288, guid: fb8ce06121c1bd4419aacd7fbe5d756f, type: 3}
   sightRange: 25
-  atkRange: 2
+  atkRange: 20
   bKeepInSightRange: 0
   bKeepInAtkRange: 0
 --- !u!195 &1453289373
