@@ -15,7 +15,9 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire;
     private BoxCollider gunTrigger;
     public EnemyManager enemyManager;
+
     public LayerMask raycastLayerMask;
+    public LayerMask enemyLayerMask;
 
     // Start is called before the first frame update
     void Start()

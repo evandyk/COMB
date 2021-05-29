@@ -9,6 +9,9 @@ public class WaspAggro : MonoBehaviour
     public Transform beeKeeper;
     public LayerMask groundMask, bKeeperMask;
 
+    public Material aggroMat;
+    public Material passiveMat;
+
     //Patrol
     public Vector3 patrolPt;
     bool patrolPtSet;
@@ -22,6 +25,11 @@ public class WaspAggro : MonoBehaviour
     public float sightRange, atkRange;
     public bool bKeepInSightRange, bKeepInAtkRange;
 
+    private void Start()
+    {
+        beeKeeper = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,19 +37,17 @@ public class WaspAggro : MonoBehaviour
         bKeepInSightRange = Physics.CheckSphere(transform.position, sightRange, bKeeperMask);
         bKeepInAtkRange = Physics.CheckSphere(transform.position, atkRange, bKeeperMask);
 
-        if (bKeepInSightRange && bKeepInAtkRange) Attack();
-        else if (bKeepInSightRange) Chase();
+        if (bKeepInSightRange && bKeepInAtkRange)
+            Attack();
+        else if (bKeepInSightRange)
+            Chase();
         else Patrol();
-    }
-
-    private void Aggro()
-    {
-        beeKeeper = GameObject.Find("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Patrol()
     {
+        GetComponent<MeshRenderer>().material = passiveMat;
+
         //Find and go to the destination to patrol point:
         if (patrolPtSet)
             agent.SetDestination(patrolPt);
@@ -53,10 +59,13 @@ public class WaspAggro : MonoBehaviour
         if (distanceToPatrolPt.magnitude < 1f)
             patrolPtSet = false;
     }
+
     private void Chase()
     {
+        GetComponent<MeshRenderer>().material = aggroMat;
         agent.SetDestination(beeKeeper.position);
     }
+
     private void Attack()
     {
         //Stop running and now attack
