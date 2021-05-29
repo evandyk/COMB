@@ -9,7 +9,6 @@ public class MouseLook : MonoBehaviour
     public float smoothing = 1.5f;
 
     private float xMousePos;
-    private float zMousePos;
     private float smoothedMousePos;
 
     private float currentLookingPos;
@@ -32,13 +31,11 @@ public class MouseLook : MonoBehaviour
     private void GetInput()
     {
         xMousePos = Input.GetAxisRaw("Mouse X");
-        zMousePos = Input.GetAxisRaw("Mouse Z");
     }
 
     private void ModifyInput()
     {
         xMousePos *= sensitity * smoothing;
-        zMousePos *= sensitity * smoothing;
         smoothedMousePos = Mathf.Lerp(smoothedMousePos, xMousePos, 1f / smoothing);
     }
 
