@@ -370,6 +370,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &192835029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4970328060391148742, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+  m_PrefabInstance: {fileID: 743173448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192835030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192835029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7c1f4f98279bc4cab9cd8868bdfaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561564471
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +695,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: spawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: enemyHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 1665195409}
@@ -763,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: m_Height
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: m_Enabled
@@ -771,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: m_BaseOffset
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: m_Acceleration
@@ -780,6 +805,10 @@ PrefabInstance:
     - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: m_AngularSpeed
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148750, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: atkRange
@@ -792,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7758856403352353288, guid: fb8ce06121c1bd4419aacd7fbe5d756f, type: 3}
     - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: sightRange
       value: 10
@@ -1736,6 +1765,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984917871}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1439258487698499226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4970328060391148742, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+  m_PrefabInstance: {fileID: 6269963895268010588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439258487698499227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439258487698499226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d9770f7e7829f4fabb19cfbd8a3791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1439258487711993933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1750,6 +1796,10 @@ PrefabInstance:
     - target: {fileID: 1439258488492883928, guid: c19cf26d61315584dae8a792c7358561, type: 3}
       propertyPath: m_Name
       value: Wasp with Aggro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439258488492883930, guid: c19cf26d61315584dae8a792c7358561, type: 3}
+      propertyPath: enemyHealth
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1439258488492883930, guid: c19cf26d61315584dae8a792c7358561, type: 3}
       propertyPath: enemyManager
@@ -1808,6 +1858,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1721650843267382532, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
+      propertyPath: enemyHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1721650843267382532, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: enemyManager
       value: 
@@ -1873,6 +1927,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: spawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: enemyHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148740, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: enemyManager
       value: 

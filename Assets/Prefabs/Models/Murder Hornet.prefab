@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
+  enemyHealth: 10
+  spawnCount: 0
   gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
 --- !u!114 &1721650843267382533
 MonoBehaviour:
