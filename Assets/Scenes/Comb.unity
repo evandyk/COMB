@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83268046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 851945954}
@@ -272,7 +272,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 20, z: 20}
+  m_Size: {x: 1, y: 20, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &83268050
 AudioSource:
@@ -1521,18 +1521,19 @@ MonoBehaviour:
   beeKeeper: {fileID: 851945954}
   groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 247
   bKeeperMask:
     serializedVersion: 2
     m_Bits: 256
   aggroMat: {fileID: 2100000, guid: f0568c868f6a4d847a609f25cdb280a3, type: 2}
   passiveMat: {fileID: 2100000, guid: 635f4c871a3d38849b33125007c490d3, type: 2}
   patrolPt: {x: 1, y: 1, z: 15}
-  patrolPtRange: 15
-  AtkCoolDown: 1
+  patrolPtRange: 10
+  patrolCoolDown: 5
+  AtkCoolDown: 2
   projectile: {fileID: 7758856403352353288, guid: fb8ce06121c1bd4419aacd7fbe5d756f, type: 3}
   sightRange: 25
-  atkRange: 20
+  atkRange: 10
   bKeepInSightRange: 0
   bKeepInAtkRange: 0
 --- !u!195 &1453289373
@@ -1545,7 +1546,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 8
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120

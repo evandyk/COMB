@@ -16,6 +16,7 @@ public class WaspAggro : MonoBehaviour
     public Vector3 patrolPt;
     bool patrolPtSet;
     public float patrolPtRange;
+    public float patrolCoolDown;
 
     //Attacking
     public float AtkCoolDown;
@@ -53,7 +54,7 @@ public class WaspAggro : MonoBehaviour
         if (patrolPtSet)
             agent.SetDestination(patrolPt);
         else
-            GetPatrolPt();
+            Invoke(nameof(GetPatrolPt), patrolCoolDown);
 
         Vector3 distanceToPatrolPt = transform.position - patrolPt;
         //Destination Reached
