@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float playerSpeed = 15f;
-    public float momentum = 5f;
+    public float momentum = 7f;
 
     private CharacterController beeCC;
     public Animator camAnim;

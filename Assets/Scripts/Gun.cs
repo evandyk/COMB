@@ -59,6 +59,10 @@ public class Gun : MonoBehaviour
         // Damage enemies
         foreach(var wasp in enemyManager.enemiesInTrigger)
         {
+            // Dummy sound
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().Play();
+
             // Get direction to enemy
             var direction = wasp.transform.position - transform.position;
 
