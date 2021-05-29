@@ -5,7 +5,6 @@ using UnityEngine;
 public class honeybonker : MonoBehaviour
 {
     Animator m_Animator;
-    public int poop = 0;
 
     void Start()
     {
@@ -19,7 +18,10 @@ public class honeybonker : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             m_Animator.SetTrigger("click");
-            poop = 1;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            m_Animator.SetTrigger("Rclick");
         }
     }
 }
