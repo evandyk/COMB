@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class honeybonker : MonoBehaviour
+public class Honeybonker : MonoBehaviour
 {
     Animator m_Animator;
+
+    public Camera fpsCam;
+    public float range = 20f;
+    public float fireRate = .3f;
+    public float weaponDamage = 2f;
+
+    private float nextTimeToFire;
 
     void Start()
     {
@@ -18,10 +23,22 @@ public class honeybonker : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             m_Animator.SetTrigger("click");
+            Bonk();
         }
         if (Input.GetMouseButtonDown(1))
         {
             m_Animator.SetTrigger("Rclick");
+            Swipe();
         }
+    }
+
+    void Bonk()
+    {
+
+    }
+
+    void Swipe()
+    {
+
     }
 }
