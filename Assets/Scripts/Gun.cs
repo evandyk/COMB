@@ -14,6 +14,15 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire;
 
     public Camera fpsCam;
+    public AudioClip shotSound;
+    AudioSource source;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+        if(source == null)
+            source = gameObject.AddComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +33,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        source.PlayOneShot(shotSound, 0.7f);
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -37,7 +48,7 @@ public class Gun : MonoBehaviour
         }
 
         nextTimeToFire = Time.time + fireRate;
-        //ammo--;
+        ammo--;
     }
 
     public void GiveAmmo(int amount, GameObject pickup)
