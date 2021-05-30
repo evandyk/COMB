@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   spawnCount: 3
+  larva: {fileID: 7248485287527622183, guid: 003d9fc8002f2b146b394be9e5d40fd0, type: 3}
 --- !u!114 &4970328060391148751
 MonoBehaviour:
   m_ObjectHideFlags: 0
