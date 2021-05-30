@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public Target target;
     public int spawnCount;
-    private GameObject larva;
+    public GameObject larva;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
 
     public void SpawnLarva()
     {
-        larva = new GameObject();
         for (int i = 0; i < spawnCount; i++)
             Instantiate(larva, transform.position, transform.rotation);
     }

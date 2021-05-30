@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
         }
 
         nextTimeToFire = Time.time + fireRate;
-        ammo--;
+        //ammo--;
     }
 
     public void GiveAmmo(int amount, GameObject pickup)
