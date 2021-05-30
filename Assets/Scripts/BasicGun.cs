@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class BasicGun : MonoBehaviour
 {
     public float range = 20f;
     public float verticalRange = 20f;
