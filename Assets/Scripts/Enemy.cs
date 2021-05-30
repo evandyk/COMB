@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = new Target();
+        target = GetComponent<Target>();
     }
 
     // Update is called once per frame

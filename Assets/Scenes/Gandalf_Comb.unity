@@ -357,6 +357,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &367967421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1721650843267382534, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
+  m_PrefabInstance: {fileID: 1721650841320732279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &367967422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367967421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eedf94dbd927904aa5300695d9df06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
+  enemyHealth: 10
 --- !u!1 &561564471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1447,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426939087}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1563254582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7248485287527622183, guid: 003d9fc8002f2b146b394be9e5d40fd0, type: 3}
+  m_PrefabInstance: {fileID: 2336785458298881961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1563254583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563254582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eedf94dbd927904aa5300695d9df06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
+  enemyHealth: 4
 --- !u!1 &1654931513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1897,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d9770f7e7829f4fabb19cfbd8a3791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1439258487698499228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439258487698499226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eedf94dbd927904aa5300695d9df06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
+  enemyHealth: 15
 --- !u!1001 &1439258487711993933
 PrefabInstance:
   m_ObjectHideFlags: 0
