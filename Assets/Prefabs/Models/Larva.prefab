@@ -275,6 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6284e0ee20694e141af2830077af5cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beevolutionTime: 10
+  waspSpawn: {fileID: 4970328060391148742, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
 --- !u!1 &4669776742250251503
 GameObject:
   m_ObjectHideFlags: 0
