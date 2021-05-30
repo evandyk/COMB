@@ -5,38 +5,36 @@ using UnityEngine;
 
 public class BasicGun : MonoBehaviour
 {
-    public EnemyManager enemyManager;
-
     public float range = 20f;
     public float verticalRange = 20f;
+
     public float fireRate = .3f;
     public float gunDamage = 2f;
-    public int maxAmmo = 100;
 
-    private int ammo = 20;
+    public int maxAmmo;
+    private int ammo;
+
     private float nextTimeToFire;
-    //private BoxCollider gunTrigger;
+    private BoxCollider gunTrigger;
+    public EnemyManager enemyManager;
 
     public LayerMask raycastLayerMask;
     public LayerMask enemyLayerMask;
 
-    public Camera fpsCam;
-
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //    gunTrigger = GetComponent<BoxCollider>();
-    //    gunTrigger.size = new Vector3(1, verticalRange, range);
-    //    gunTrigger.center = new Vector3(0, 0, range * .5f);
-    //    ammo = 20;
-    //}
+    void Start()
+    {
+        gunTrigger = GetComponent<BoxCollider>();
+        gunTrigger.size = new Vector3(1, verticalRange, range);
+        gunTrigger.center = new Vector3(0, 0, range * .5f);
+        ammo = 20;
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire && ammo > 0)
-            //Fire();
-            Shoot();
+            Fire();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,64 +59,46 @@ public class BasicGun : MonoBehaviour
         }
     }
 
-    //void Fire()
-    //{
-    //    // Damage enemies
-    //    foreach(var wasp in enemyManager.enemiesInTrigger)
-    //    {
-    //        // Dummy sound
-    //        GetComponent<AudioSource>().Stop();
-    //        GetComponent<AudioSource>().Play();
-
-    //        // Get direction to enemy
-    //        var direction = wasp.transform.position - transform.position;
-
-    //        RaycastHit hit;
-    //        if(Physics.Raycast(transform.position, direction, out hit, range * 1.5f, raycastLayerMask))
-    //        {
-    //            if(hit.transform == wasp.transform)
-    //            {
-    //                // Damage
-    //                wasp.target.TakeDamage(gunDamage);
-
-    //                // Range check?
-    //                //float dist = Vector3.Distance(wasp.transform.position, transform.position);
-
-    //                //if(dist > range * .5f)
-    //                //{
-    //                //    // Damage
-    //                //    wasp.TakeDamage(smallDamage);
-    //                //}
-    //                //else
-    //                //{
-    //                //    wasp.TakeDamage(bigDamage);
-    //                //}
-    //            }
-    //        }
-    //    }
-
-    //    // Reset timer
-    //    nextTimeToFire = Time.time + fireRate;
-
-    //    ammo--;
-    //}
-
-    void Shoot()
+    void Fire()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        // Damage enemies
+        foreach(var wasp in enemyManager.enemiesInTrigger)
         {
-            Debug.Log(hit.transform.name);
+            // Dummy sound
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().Play();
 
-            Target target = hit.transform.GetComponent<Target>();
-            if(target != null)
+            // Get direction to enemy
+            var direction = wasp.transform.position - transform.position;
+
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, direction, out hit, range * 1.5f, raycastLayerMask))
             {
-                target.TakeDamage(gunDamage);
+                if(hit.transform == wasp.transform)
+                {
+                    // Damage
+                    wasp.TakeDamage(gunDamage);
+
+                    // Range check?
+                    //float dist = Vector3.Distance(wasp.transform.position, transform.position);
+
+                    //if(dist > range * .5f)
+                    //{
+                    //    // Damage
+                    //    wasp.TakeDamage(smallDamage);
+                    //}
+                    //else
+                    //{
+                    //    wasp.TakeDamage(bigDamage);
+                    //}
+                }
             }
         }
 
+        // Reset timer
         nextTimeToFire = Time.time + fireRate;
-        //ammo--;
+
+        ammo--;
     }
 
     public void GiveAmmo(int amount, GameObject pickup)
