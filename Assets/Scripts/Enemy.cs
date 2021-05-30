@@ -5,7 +5,6 @@ public class Enemy : MonoBehaviour
     public Target target;
     public int spawnCount;
     public GameObject larva;
-    public GameObject waspSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +18,11 @@ public class Enemy : MonoBehaviour
         if (!target.IsAlive())
         {
             if (gameObject.tag == "Parasitic")
+            {
+                Destroy(gameObject);
                 SpawnLarva();
-            Destroy(gameObject);
+            } else
+                Destroy(gameObject);
         }
     }
 
@@ -28,11 +30,5 @@ public class Enemy : MonoBehaviour
     {
         for (int i = 0; i < spawnCount; i++)
             Instantiate(larva, transform.position, transform.rotation);
-    }
-
-    public void SpawnWasp()
-    {
-        for (int i = 0; i < spawnCount; i++)
-            Instantiate(waspSpawn, transform.position, transform.rotation);
     }
 }
