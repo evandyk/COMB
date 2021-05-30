@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnLarva()
     {
+        larva = new GameObject();
         for(int i = 0; i < spawnCount; i++)
             Instantiate(larva, transform.position, transform.rotation);
     }
