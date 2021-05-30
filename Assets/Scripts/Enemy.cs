@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     public Target target;
     public int spawnCount;
     public GameObject larva;
+    public GameObject waspSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnWasp()
     {
-        Debug.Log("Spawn Wasp!");
+        for (int i = 0; i < spawnCount; i++)
+            Instantiate(waspSpawn, transform.position, transform.rotation);
     }
 }
