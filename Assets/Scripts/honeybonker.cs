@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Honeybonker : MonoBehaviour
+public class honeybonker : MonoBehaviour
 {
     Animator m_Animator;
 

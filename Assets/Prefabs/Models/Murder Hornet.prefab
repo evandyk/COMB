@@ -331,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   spawnCount: 0
+  larva: {fileID: 0}
 --- !u!114 &1721650843267382533
 MonoBehaviour:
   m_ObjectHideFlags: 0
