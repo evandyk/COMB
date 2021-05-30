@@ -15,14 +15,18 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!target.IsAlive())
+        if(target != null)
         {
-            if (gameObject.tag == "Parasitic")
+            if (!target.IsAlive())
             {
-                Destroy(gameObject);
-                SpawnLarva();
-            } else
-                Destroy(gameObject);
+                if (gameObject.tag == "Parasitic")
+                {
+                    Destroy(gameObject);
+                    SpawnLarva();
+                }
+                else
+                    Destroy(gameObject);
+            }
         }
     }
 
