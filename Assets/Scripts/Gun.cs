@@ -10,8 +10,8 @@ public class Gun : MonoBehaviour
     public float weaponDamage = 2f;
     public int maxAmmo = 100;
 
-    private int ammo = 20;
-    private float nextTimeToFire;
+    public int ammo = 20;
+    public float nextTimeToFire;
 
     public Camera fpsCam;
     public AudioClip shotSound;
@@ -27,11 +27,9 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire && ammo > 0)
-            Shoot();
     }
 
-    void Shoot()
+    public void Shoot()
     {
         source.PlayOneShot(shotSound, 0.7f);
 
@@ -48,7 +46,6 @@ public class Gun : MonoBehaviour
         }
 
         nextTimeToFire = Time.time + fireRate;
-        ammo--;
     }
 
     public void GiveAmmo(int amount, GameObject pickup)

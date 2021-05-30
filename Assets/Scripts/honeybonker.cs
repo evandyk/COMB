@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class honeybonker : MonoBehaviour
+public class Honeybonker : MonoBehaviour
 {
     Animator m_Animator;
 
@@ -40,13 +40,14 @@ public class honeybonker : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
                 source.PlayOneShot(bonkSound, 0.7f);
                 target.TakeDamage(weaponDamage, hit);
+                Debug.Log(hit.transform.name);
             }
         }
 

@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
+  hitSound: {fileID: 8300000, guid: 6eca1a0d71c776f4f91b4aee2b4896c4, type: 3}
   enemyHealth: 1
 --- !u!114 &-8331584551262391372
 MonoBehaviour:
@@ -605,7 +606,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 392865657218008456, guid: e3af4a5962ff93846bd9ddcc9a72a89f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
