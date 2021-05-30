@@ -80,12 +80,15 @@ public class WaspAggro : MonoBehaviour
             //INSERT ATTACK CODE HERE
             transform.LookAt(beeKeeper);
 
-            Rigidbody rb = Instantiate(projectile, transform.position + spawnDistance * transform.forward, transform.rotation).GetComponent<Rigidbody>();
+            GameObject thisProj = Instantiate(projectile, transform.position + spawnDistance * transform.forward, transform.rotation);
+            Rigidbody rb = thisProj.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * force);
             rb.AddForce(transform.up * 3f, ForceMode.Impulse);
 
             atkOnCoolDown = true;
             Invoke(nameof(ResetAtk), AtkCoolDown);
+
+            Destroy(thisProj, 2f);
         }
     }
     private void GetPatrolPt()

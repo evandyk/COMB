@@ -15,21 +15,11 @@ public class BasicGun : MonoBehaviour
 
     private int ammo = 20;
     private float nextTimeToFire;
-    //private BoxCollider gunTrigger;
 
-    public LayerMask raycastLayerMask;
-    public LayerMask enemyLayerMask;
+    //public LayerMask raycastLayerMask;
+    //public LayerMask enemyLayerMask;
 
     public Camera fpsCam;
-
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    gunTrigger = GetComponent<BoxCollider>();
-    //    gunTrigger.size = new Vector3(1, verticalRange, range);
-    //    gunTrigger.center = new Vector3(0, 0, range * .5f);
-    //    ammo = 20;
-    //}
 
     // Update is called once per frame
     void Update()
@@ -60,48 +50,6 @@ public class BasicGun : MonoBehaviour
             enemyManager.RemoveEnemy(wasp);
         }
     }
-
-    //void Fire()
-    //{
-    //    // Damage enemies
-    //    foreach(var wasp in enemyManager.enemiesInTrigger)
-    //    {
-    //        // Dummy sound
-    //        GetComponent<AudioSource>().Stop();
-    //        GetComponent<AudioSource>().Play();
-
-    //        // Get direction to enemy
-    //        var direction = wasp.transform.position - transform.position;
-
-    //        RaycastHit hit;
-    //        if(Physics.Raycast(transform.position, direction, out hit, range * 1.5f, raycastLayerMask))
-    //        {
-    //            if(hit.transform == wasp.transform)
-    //            {
-    //                // Damage
-    //                wasp.target.TakeDamage(gunDamage);
-
-    //                // Range check?
-    //                //float dist = Vector3.Distance(wasp.transform.position, transform.position);
-
-    //                //if(dist > range * .5f)
-    //                //{
-    //                //    // Damage
-    //                //    wasp.TakeDamage(smallDamage);
-    //                //}
-    //                //else
-    //                //{
-    //                //    wasp.TakeDamage(bigDamage);
-    //                //}
-    //            }
-    //        }
-    //    }
-
-    //    // Reset timer
-    //    nextTimeToFire = Time.time + fireRate;
-
-    //    ammo--;
-    //}
 
     void Shoot()
     {

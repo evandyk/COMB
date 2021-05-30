@@ -8,11 +8,13 @@ public class Target : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
-        Instantiate(gunHitEffect, transform.position, Quaternion.identity);
+        GameObject hitEffect = Instantiate(gunHitEffect, transform.position, Quaternion.identity);
 
         enemyHealth -= damage;
         if (enemyHealth <= 0f)
             isAlive = false;
+
+        Destroy(hitEffect, 2f);
     }
 
     public bool IsAlive()
