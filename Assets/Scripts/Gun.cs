@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float range = 20f;
+    public float range = 30f;
     public float fireRate = 3f;
     public float weaponDamage = 5f;
     public int maxAmmo = 60;
