@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Parasitic
   - Larva
+  - WaspBullet
   layers:
   - Default
   - TransparentFX
