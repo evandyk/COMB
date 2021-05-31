@@ -10,6 +10,7 @@ public class WaspAggro : MonoBehaviour
     public Transform beeKeeper;
     public LayerMask groundMask, bKeeperMask;
     public Animator m_Animator;
+    public float Unstick;
 
     public Material aggroMat;
     public Material passiveMat;
@@ -54,8 +55,12 @@ public class WaspAggro : MonoBehaviour
             }
             else if (bKeepInSightRange)
                 Chase();
-            else Patrol();
         }
+        else Patrol();
+        if (Unstick > Time.time)
+            agent.speed = 0;
+        else agent.speed = 5;
+
     }
           
     private void Patrol()
