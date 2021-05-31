@@ -10,9 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int armor;
 
+    public AudioClip ahhhhh;
+    AudioSource src;
+
     // Start is called before the first frame update
     void Start()
     {
+        src = GetComponent<AudioSource>();
         health = maxHealth;
         armor = 0;
     }
@@ -30,9 +34,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        src.PlayOneShot(ahhhhh, 0.4f);
         if(armor > 0)
         {
-            //armor -= damage;
+            armor -= damage;
             if (armor < 0)
                 armor = 0;
         }

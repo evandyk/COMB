@@ -88,11 +88,24 @@ public class Honeybonker : MonoBehaviour
 
     private IEnumerator MultiBonk(List<RaycastHit> bonks)
     {
+        float force = 10;
+
         foreach(RaycastHit bonk in bonks)
         {
+            // Get the target object
             Target t = bonk.transform.gameObject.GetComponent<Target>();
+
+            // Damage object and play sound
             source.PlayOneShot(swipeBonkSound, 0.7f);
             t.TakeDamage(swipeDamage, bonk);
+
+            // Apply force to object
+            Vector3 dir = bonk.point - transform.position;
+            dir.Normalize();
+            Rigidbody rb = bonk.transform.gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(dir * force, ForceMode.Impulse);
+
+            // Small delay to make it behave nicely
             yield return new WaitForSeconds(.05f);
         }
     }
