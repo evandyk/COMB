@@ -78,6 +78,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator DeathSound()
     {
+        src.Stop();
         src.PlayOneShot(ahhh, 0.5f);
         yield return new WaitWhile(() => src.isPlaying);
 

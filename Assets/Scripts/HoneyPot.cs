@@ -16,7 +16,10 @@ public class HoneyPot : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && honeypots > 0) {
-            GameObject Pot = Instantiate(HoneyProjectile, transform.position, transform.rotation);
+            GameObject Pot = Instantiate(HoneyProjectile, transform.position + 3 * transform.forward, transform.rotation);
+            Rigidbody rb = Pot.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 100);
+            rb.AddForce(transform.up * 0.5f, ForceMode.Impulse);
             honeypots--;
         }
     }
