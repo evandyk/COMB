@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class WaspAggro : MonoBehaviour
 {
+    public LayerMask LoSMask;
     public NavMeshAgent agent;
     public Transform beeKeeper;
     public LayerMask groundMask, bKeeperMask;
@@ -41,18 +42,22 @@ public class WaspAggro : MonoBehaviour
         bKeepInSightRange = Physics.CheckSphere(transform.position, sightRange, bKeeperMask);
         bKeepInAtkRange = Physics.CheckSphere(transform.position, atkRange, bKeeperMask);
 
-        if (bKeepInSightRange && bKeepInAtkRange)
-        {
-            //Stop running and now attack
-            agent.SetDestination(transform.position);
-            if (!atkOnCoolDown)
-                m_Animator.SetTrigger("Attack");
-        }
-        else if (bKeepInSightRange)
-            Chase();
-        else Patrol();
-    }
 
+        if (!Physics.Linecast(transform.position, beeKeeper.position, LoSMask))
+        {
+            if (bKeepInSightRange && bKeepInAtkRange)
+            {
+                //Stop running and now attack
+                agent.SetDestination(transform.position);
+                if (!atkOnCoolDown)
+                    m_Animator.SetTrigger("Attack");
+            }
+            else if (bKeepInSightRange)
+                Chase();
+            else Patrol();
+        }
+    }
+          
     private void Patrol()
     {
         GetComponent<MeshRenderer>().material = passiveMat;

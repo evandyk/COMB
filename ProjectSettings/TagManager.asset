@@ -7,11 +7,12 @@ TagManager:
   - Parasitic
   - Larva
   - WaspBullet
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Gun
