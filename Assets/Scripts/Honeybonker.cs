@@ -45,10 +45,13 @@ public class Honeybonker : MonoBehaviour
     void Bonk()
     {
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, bonkRange))
+        if(Physics.SphereCast(fpsCam.transform.position, 1, fpsCam.transform.forward, out hit, bonkRange))
         {
             Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
+            Vector3 vectorToCollider = (hit.transform.position - fpsCam.transform.position);
+            vectorToCollider.Normalize();
+
+            if (target != null && (Vector3.Dot(vectorToCollider, fpsCam.transform.forward) > 0.9f))
             {
                 source.PlayOneShot(bonkSound, 0.7f);
                 target.TakeDamage(bonkDamage, hit);
