@@ -13,16 +13,30 @@ public class Beevolve : MonoBehaviour
      */
     public float beevolutionTime;
     public GameObject waspSpawn;
+    Animator m_Animator;
 
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if(beevolutionTime <= 0)
+        m_Animator = gameObject.GetComponentInChildren<Animator>();
+    }
+
+
+
+        // Update is called once per frame
+        void Update()
+    {
+        if (beevolutionTime <= 0)
         {
             //Beevolve
             Instantiate(waspSpawn, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
+        else if (beevolutionTime <= 5)
+        {
+            m_Animator.SetTrigger("MetaMorphosis");
+            (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
+            GetComponent<WaspAggro>().agent.SetDestination(transform.position);
+            beevolutionTime -= Time.deltaTime;
         }
         else
         {

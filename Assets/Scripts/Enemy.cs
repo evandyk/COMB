@@ -5,11 +5,13 @@ public class Enemy : MonoBehaviour
     public Target target;
     public int spawnCount;
     public GameObject larva;
+    public Animator m_Animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GetComponent<Target>();
+        target = this.GetComponent<Target>();
+        m_Animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -21,11 +23,17 @@ public class Enemy : MonoBehaviour
             {
                 if (gameObject.tag == "Parasitic")
                 {
-                    Destroy(gameObject);
+                    m_Animator.SetTrigger("Death");
                     SpawnLarva();
+                    (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
+                    GetComponent<WaspAggro>().agent.SetDestination(transform.position);
                 }
                 else
-                    Destroy(gameObject);
+                {
+                    m_Animator.SetTrigger("Death");
+                    (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
+                    GetComponent<WaspAggro>().agent.SetDestination(transform.position);
+                }
             }
         }
     }
