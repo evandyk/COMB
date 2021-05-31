@@ -60,7 +60,7 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon();
     }
 
-    void SelectWeapon()
+    public void SelectWeapon()
     {
         int i = 0;
         foreach(Transform weapon in transform)

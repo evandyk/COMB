@@ -6,7 +6,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public float range = 20f;
-    public float fireRate = .3f;
+    public float fireRate = 3f;
     public float weaponDamage = 5f;
     public int maxAmmo = 60;
 
@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void Shoot()
