@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
                     SpawnLarva();
                     (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
                     GetComponent<WaspAggro>().agent.SetDestination(transform.position);
+                    this.enabled = false;
                 }
                 else
                 {

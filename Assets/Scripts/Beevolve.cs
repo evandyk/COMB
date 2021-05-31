@@ -25,7 +25,7 @@ public class Beevolve : MonoBehaviour
         // Update is called once per frame
         void Update()
     {
-        if (beevolutionTime <= 0)
+        if (beevolutionTime <= 0 && this.GetComponent<Target>().IsAlive())
         {
             //Beevolve
             Instantiate(waspSpawn, transform.position, transform.rotation);
@@ -36,6 +36,7 @@ public class Beevolve : MonoBehaviour
             m_Animator.SetTrigger("MetaMorphosis");
             (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
             GetComponent<WaspAggro>().agent.SetDestination(transform.position);
+
             beevolutionTime -= Time.deltaTime;
         }
         else
