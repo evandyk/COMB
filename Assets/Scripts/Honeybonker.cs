@@ -55,6 +55,11 @@ public class Honeybonker : MonoBehaviour
             {
                 source.PlayOneShot(bonkSound, 0.7f);
                 target.TakeDamage(bonkDamage, hit);
+                if (!target.IsAlive())
+                {
+                    var weaponSwitch = GetComponentInParent<WeaponSwitching>();
+                    weaponSwitch.kills++;
+                }
                 Debug.Log(hit.transform.name);
             }
         }
@@ -98,6 +103,11 @@ public class Honeybonker : MonoBehaviour
             // Damage object and play sound
             source.PlayOneShot(swipeBonkSound, 0.7f);
             t.TakeDamage(swipeDamage, bonk);
+            if (!t.IsAlive())
+            {
+                var weaponSwitch = GetComponentInParent<WeaponSwitching>();
+                weaponSwitch.kills++;
+            }
 
             // Apply force to object
             //Vector3 dir = bonk.point - transform.position;

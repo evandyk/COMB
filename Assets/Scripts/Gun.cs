@@ -49,6 +49,11 @@ public class Gun : MonoBehaviour
             {
                 source.PlayOneShot(hitSound, 0.7f);
                 target.TakeDamage(weaponDamage, hit);
+                if (!target.IsAlive())
+                {
+                    var weaponSwitch = GetComponentInParent<WeaponSwitching>();
+                    weaponSwitch.kills++;
+                }
             }
         }
 
