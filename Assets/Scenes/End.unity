@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888, y: -142.39}
+  m_AnchoredPosition: {x: -0.000022888, y: -162}
   m_SizeDelta: {x: 628.4297, y: 179.2798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928602314
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 1078911103}
   - component: {fileID: 1078911102}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: QUIT
@@ -470,7 +470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 158.22}
+  m_AnchoredPosition: {x: 0.000015259, y: 104.31}
   m_SizeDelta: {x: 695.4186, y: 208.6155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1323738231
@@ -674,7 +674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Moon Jam 2021:
+  m_Text: 'MOON JAM 2021:
 
 
     1 HP'
@@ -720,7 +720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000021935, y: -18.874}
+  m_AnchoredPosition: {x: 0.000021935, y: -55.345985}
   m_SizeDelta: {x: 746.8241, y: 67.7489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613399415
@@ -745,10 +745,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 631a4054f99bd644bbeb79b7cf1a99bf, type: 3}
-    m_FontSize: 36
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 1830738675}
   - component: {fileID: 1830738677}
   - component: {fileID: 1830738676}
+  - component: {fileID: 1830738678}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -842,6 +843,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830738674}
   m_CullTransparentMesh: 1
+--- !u!114 &1830738678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830738674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74be83859107dc040b9c0e2c861b4134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848136049
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +867,7 @@ GameObject:
   - component: {fileID: 1848136053}
   - component: {fileID: 1848136052}
   - component: {fileID: 1848136051}
+  - component: {fileID: 1848136054}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -878,7 +892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -330}
+  m_AnchoredPosition: {x: 0, y: -402.36}
   m_SizeDelta: {x: 331.5861, y: 84.9075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848136051
@@ -905,7 +919,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9339623, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+    m_SelectedColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.49019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -924,7 +938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848136052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1830738678}
+        m_TargetAssemblyTypeName: Credits, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848136052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -963,6 +989,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848136049}
   m_CullTransparentMesh: 1
+--- !u!114 &1848136054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848136049}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2070550761
 GameObject:
   m_ObjectHideFlags: 0
