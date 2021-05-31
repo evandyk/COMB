@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(armor > 0)
         {
-            armor -= damage;
+            //armor -= damage;
             if (armor < 0)
                 armor = 0;
         }

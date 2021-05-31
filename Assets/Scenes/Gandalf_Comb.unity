@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parasitic Wasp
       objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148747, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: beeKeeper
       value: 
@@ -573,7 +577,7 @@ MonoBehaviour:
   isAmmo: 0
   isHoney: 0
   isWing: 0
-  amount: 1
+  amount: 4
 --- !u!65 &669013352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -714,6 +718,10 @@ PrefabInstance:
       propertyPath: beeKeeper
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1439258488492883925, guid: c19cf26d61315584dae8a792c7358561, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1439258488492883928, guid: c19cf26d61315584dae8a792c7358561, type: 3}
       propertyPath: m_Name
       value: YellowJacket
@@ -807,7 +815,7 @@ MonoBehaviour:
   isAmmo: 0
   isHoney: 0
   isWing: 0
-  amount: 1
+  amount: 4
 --- !u!65 &742077203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -945,6 +953,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525921104466319496, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669776742052802931, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4669776742052802932, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
@@ -1273,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 676692290, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ebfee29552d5efa44983389b499bf5a6, type: 2}
+      objectReference: {fileID: 9100000, guid: 3f8062e4f4d50e74f977ab6393bd2059, type: 2}
     - target: {fileID: 676692291, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: hitSound
       value: 
@@ -1284,6 +1296,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 676692292, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721650843267382531, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1721650843267382533, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
@@ -1641,7 +1657,7 @@ MonoBehaviour:
   isAmmo: 0
   isHoney: 0
   isWing: 0
-  amount: 1
+  amount: 4
 --- !u!65 &1333807601
 BoxCollider:
   m_ObjectHideFlags: 0
