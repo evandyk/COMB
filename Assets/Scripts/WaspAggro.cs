@@ -8,6 +8,7 @@ public class WaspAggro : MonoBehaviour
     public NavMeshAgent agent;
     public Transform beeKeeper;
     public LayerMask groundMask, bKeeperMask;
+    public Animator m_Animator;
 
     public Material aggroMat;
     public Material passiveMat;
@@ -31,6 +32,7 @@ public class WaspAggro : MonoBehaviour
     {
         beeKeeper = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        m_Animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -39,8 +41,8 @@ public class WaspAggro : MonoBehaviour
         bKeepInSightRange = Physics.CheckSphere(transform.position, sightRange, bKeeperMask);
         bKeepInAtkRange = Physics.CheckSphere(transform.position, atkRange, bKeeperMask);
 
-        if (bKeepInSightRange && bKeepInAtkRange)
-            Attack();
+        if (bKeepInSightRange && bKeepInAtkRange && !atkOnCoolDown)
+            m_Animator.SetTrigger("Attack");
         else if (bKeepInSightRange)
             Chase();
         else Patrol();
@@ -68,28 +70,27 @@ public class WaspAggro : MonoBehaviour
         agent.SetDestination(beeKeeper.position);
     }
 
-    private void Attack()
+    public void Attack()
     {
         float spawnDistance = 1.0f;
         float force = 3000.0f;
         //Stop running and now attack
         agent.SetDestination(transform.position);
 
-        if (!atkOnCoolDown)
-        {
-            //INSERT ATTACK CODE HERE
-            transform.LookAt(beeKeeper);
+        //INSERT ATTACK CODE HERE
+        transform.LookAt(beeKeeper);
 
-            GameObject thisProj = Instantiate(projectile, transform.position + spawnDistance * transform.forward, transform.rotation);
-            Rigidbody rb = thisProj.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * force);
-            rb.AddForce(transform.up * 3f, ForceMode.Impulse);
+        Debug.Log("poop");
 
-            atkOnCoolDown = true;
-            Invoke(nameof(ResetAtk), AtkCoolDown);
+        GameObject thisProj = Instantiate(projectile, transform.position + spawnDistance * transform.forward, transform.rotation);
+        Rigidbody rb = thisProj.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * force);
+        rb.AddForce(transform.up * 3f, ForceMode.Impulse);
 
-            Destroy(thisProj, 2f);
-        }
+        atkOnCoolDown = true;
+        Invoke(nameof(ResetAtk), AtkCoolDown);
+
+        Destroy(thisProj, 2f);
     }
     private void GetPatrolPt()
     {
