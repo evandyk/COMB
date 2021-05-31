@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public GameManager gameManager;
-
     public int maxHealth;
     public int maxArmor;
     public int health;
@@ -81,10 +79,8 @@ public class PlayerHealth : MonoBehaviour
         src.Stop();
         src.PlayOneShot(ahhh, 0.5f);
         yield return new WaitWhile(() => src.isPlaying);
-
         Time.timeScale = 1;
-        //Scene currentScene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(currentScene.buildIndex);
-        gameManager.LevelLost();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }
