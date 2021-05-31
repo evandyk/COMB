@@ -196,8 +196,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -296,9 +296,13 @@ MonoBehaviour:
   fpsCam: {fileID: 1446023006309811263}
   bonkSound: {fileID: 8300000, guid: acb7634d628f9a7418005dcc77ab1677, type: 3}
   swishSound: {fileID: 8300000, guid: b02ee719834e9534286e254a9eeb0dd6, type: 3}
-  range: 5
+  swipeBonkSound: {fileID: 8300000, guid: aad70209ea50bca42ab1bc6d027b1971, type: 3}
+  bonkRange: 3
+  swipeRange: 5
   fireRate: 2
-  weaponDamage: 10
+  bonkDamage: 10
+  swipeDamage: 2
+  maxSwipeBonks: 5
 --- !u!1 &1446023005694580986
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   fireRate: 0.3
-  weaponDamage: 2
+  weaponDamage: 5
   maxAmmo: 100
   ammo: 20
   nextTimeToFire: 0
@@ -782,7 +786,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6eca1a0d71c776f4f91b4aee2b4896c4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

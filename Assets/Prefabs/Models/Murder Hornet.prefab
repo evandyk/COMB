@@ -611,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6652405585261983515, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.0036077201
+      value: 0.003607735
       objectReference: {fileID: 0}
     - target: {fileID: -6652405585261983515, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -695,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4360326476431434316, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.15689619
+      value: 0.15689617
       objectReference: {fileID: 0}
     - target: {fileID: -4360326476431434316, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -779,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5035180149480694062, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.17499998
+      value: 0.17499997
       objectReference: {fileID: 0}
     - target: {fileID: 5035180149480694062, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -815,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.041228294
+      value: 0.04122877
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -823,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.25501028
+      value: 0.25501025
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y
