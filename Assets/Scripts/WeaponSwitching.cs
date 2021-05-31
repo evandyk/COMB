@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeapon = 0;
+    public int selectedWeapon = 1;
+    private Gun gun;
 
     // Start is called before the first frame update
     void Start()
     {
+        SelectWeapon();
+        gun = transform.GetComponentInChildren<Gun>();
+
+        selectedWeapon = 0;
         SelectWeapon();
     }
 
@@ -72,5 +77,10 @@ public class WeaponSwitching : MonoBehaviour
 
             i++;
         }
+    }
+
+    public void GiveAmmo(int amount, GameObject pickup)
+    {
+        gun.GiveAmmo(amount, pickup);
     }
 }

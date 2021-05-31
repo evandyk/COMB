@@ -13,7 +13,7 @@ public class ItemPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,9 +33,8 @@ public class ItemPickup : MonoBehaviour
 
             if (isAmmo)
             {
-                GameObject obj = other.gameObject;
-                Gun gun = obj.GetComponentInChildren<Gun>();
-                gun.GiveAmmo(amount, gameObject);
+                var weaponHolder = other.GetComponentInChildren<WeaponSwitching>();
+                weaponHolder.GiveAmmo(amount, gameObject);
             }
 
             if (isHoney)
