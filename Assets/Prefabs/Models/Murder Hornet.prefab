@@ -347,6 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1107370c1a73141a6218470ad39f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoSMask:
+    serializedVersion: 2
+    m_Bits: 0
   agent: {fileID: 1721650843267382543}
   beeKeeper: {fileID: 0}
   groundMask:
@@ -476,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunHitEffect: {fileID: 1332486790778125494, guid: 4721b93640be06f4c983eb80418dd2a2, type: 3}
-  enemyHealth: 10
+  enemyHealth: 20
 --- !u!95 &1085907718
 Animator:
   serializedVersion: 3
@@ -553,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6652405585261983515, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.0036077201
+      value: 0.003607735
       objectReference: {fileID: 0}
     - target: {fileID: -6652405585261983515, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -637,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4360326476431434316, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.15689619
+      value: 0.15689617
       objectReference: {fileID: 0}
     - target: {fileID: -4360326476431434316, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -721,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5035180149480694062, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.17499998
+      value: 0.17499997
       objectReference: {fileID: 0}
     - target: {fileID: 5035180149480694062, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -757,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.041228294
+      value: 0.04122877
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -765,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.25501028
+      value: 0.25501025
       objectReference: {fileID: 0}
     - target: {fileID: 7188421513205844040, guid: b923ebe7b670b9543b05052ac804c836, type: 3}
       propertyPath: m_Bounds.m_Extent.y

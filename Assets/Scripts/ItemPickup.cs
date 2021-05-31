@@ -33,7 +33,9 @@ public class ItemPickup : MonoBehaviour
 
             if (isAmmo)
             {
-                other.GetComponentInChildren<Gun>().GiveAmmo(amount, gameObject);
+                GameObject obj = other.gameObject;
+                Gun gun = obj.GetComponentInChildren<Gun>();
+                gun.GiveAmmo(amount, gameObject);
             }
 
             if (isHoney)

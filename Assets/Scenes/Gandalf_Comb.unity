@@ -357,6 +357,10 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1446023006940575900, guid: 527ced30ab296b34f82f4d23e7c50adf, type: 3}
+      propertyPath: range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446023006940575900, guid: 527ced30ab296b34f82f4d23e7c50adf, type: 3}
       propertyPath: maxAmmo
       value: 60
       objectReference: {fileID: 0}
@@ -463,6 +467,10 @@ PrefabInstance:
     - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
       propertyPath: beeKeeper
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970328060391148751, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
+      propertyPath: sightRange
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d18210cc57f884284c3c80c911a66f, type: 3}
@@ -719,8 +727,16 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1439258488492883921, guid: c19cf26d61315584dae8a792c7358561, type: 3}
+      propertyPath: atkRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439258488492883921, guid: c19cf26d61315584dae8a792c7358561, type: 3}
       propertyPath: beeKeeper
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439258488492883921, guid: c19cf26d61315584dae8a792c7358561, type: 3}
+      propertyPath: sightRange
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1439258488492883925, guid: c19cf26d61315584dae8a792c7358561, type: 3}
       propertyPath: m_IsKinematic
@@ -966,6 +982,10 @@ PrefabInstance:
     - target: {fileID: 4669776742052802932, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
       propertyPath: hitSound
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669776742052802933, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
+      propertyPath: sightRange
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4669776742052802935, guid: 9fec200c799f36347bf3a0e42adbd037, type: 3}
       propertyPath: m_Name
@@ -1305,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 1721650843267382531, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721650843267382533, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
+      propertyPath: atkRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1721650843267382533, guid: b0a7fd188eb045e4dbc1d8376abcd30d, type: 3}
       propertyPath: beeKeeper
