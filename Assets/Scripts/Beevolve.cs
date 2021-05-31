@@ -33,6 +33,9 @@ public class Beevolve : MonoBehaviour
         }
         else if (beevolutionTime <= 5)
         {
+            Collider eggBonker = GetComponent<Collider>();
+            eggBonker.enabled = false;
+
             m_Animator.SetTrigger("MetaMorphosis");
             (GetComponent("WaspAggro") as MonoBehaviour).enabled = false;
             GetComponent<WaspAggro>().agent.SetDestination(transform.position);
