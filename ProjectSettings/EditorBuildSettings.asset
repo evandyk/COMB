@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: d1b9a1ea9975d81488cc7bae5489483f
+  - enabled: 1
+    path: Assets/Scenes/Neato Scene.unity
+    guid: bce0d53714d306447b03850fe6c88c52
+  - enabled: 1
+    path: Assets/Scenes/GameMenu.unity
+    guid: 0875bc399bb1b9b40ba6b5701ed0cb5e
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: e097f5494cd382048998563e3dd5f694
   m_configObjects: {}
