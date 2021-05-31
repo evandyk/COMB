@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip ahhh;
     AudioSource src;
 
+    private bool playerIsAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,25 +37,29 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        src.PlayOneShot(oof, 0.4f);
-        if(armor > 0)
+        if (playerIsAlive)
         {
-            armor -= damage;
-            if (armor < 0)
-                armor = 0;
-        }
-        else
-        {
-            health -= damage;
-        }
+            src.PlayOneShot(oof, 0.4f);
+            if(armor > 0)
+            {
+                armor -= damage;
+                if (armor < 0)
+                    armor = 0;
+            }
+            else
+            {
+                health -= damage;
+            }
 
-        if(health <= 0)
-        {
-            // Dead
-            Debug.Log("Player has died.");
+            if(health <= 0)
+            {
+                // Dead
+                playerIsAlive = false;
+                Debug.Log("Player has died.");
 
-            Time.timeScale = 0;
-            StartCoroutine(DeathSound());
+                Time.timeScale = 0;
+                StartCoroutine(DeathSound());
+            }
         }
     }
 
@@ -73,9 +79,8 @@ public class PlayerHealth : MonoBehaviour
         src.Stop();
         src.PlayOneShot(ahhh, 0.5f);
         yield return new WaitWhile(() => src.isPlaying);
-
         Time.timeScale = 1;
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

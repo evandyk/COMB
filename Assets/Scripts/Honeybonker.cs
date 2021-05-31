@@ -45,7 +45,7 @@ public class Honeybonker : MonoBehaviour
     void Bonk()
     {
         RaycastHit hit;
-        if(Physics.SphereCast(fpsCam.transform.position, 1, fpsCam.transform.forward, out hit, bonkRange))
+        if(Physics.SphereCast(fpsCam.transform.position, .2f, fpsCam.transform.forward, out hit, bonkRange))
         {
             Target target = hit.transform.GetComponent<Target>();
             Vector3 vectorToCollider = (hit.transform.position - fpsCam.transform.position);
