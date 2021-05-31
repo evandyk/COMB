@@ -100,10 +100,10 @@ public class Honeybonker : MonoBehaviour
             t.TakeDamage(swipeDamage, bonk);
 
             // Apply force to object
-            Vector3 dir = bonk.point - transform.position;
-            dir.Normalize();
-            Rigidbody rb = bonk.transform.gameObject.GetComponent<Rigidbody>();
-            rb.AddForce(dir * force, ForceMode.Impulse);
+            //Vector3 dir = bonk.point - transform.position;
+            //dir.Normalize();
+            //Rigidbody rb = bonk.transform.gameObject.GetComponent<Rigidbody>();
+            //rb.AddForce(dir * force, ForceMode.Impulse);
 
             // Small delay to make it behave nicely
             yield return new WaitForSeconds(.05f);

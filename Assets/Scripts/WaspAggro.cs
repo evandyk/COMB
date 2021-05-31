@@ -41,8 +41,13 @@ public class WaspAggro : MonoBehaviour
         bKeepInSightRange = Physics.CheckSphere(transform.position, sightRange, bKeeperMask);
         bKeepInAtkRange = Physics.CheckSphere(transform.position, atkRange, bKeeperMask);
 
-        if (bKeepInSightRange && bKeepInAtkRange && !atkOnCoolDown)
-            m_Animator.SetTrigger("Attack");
+        if (bKeepInSightRange && bKeepInAtkRange)
+        {
+            //Stop running and now attack
+            agent.SetDestination(transform.position);
+            if (!atkOnCoolDown)
+                m_Animator.SetTrigger("Attack");
+        }
         else if (bKeepInSightRange)
             Chase();
         else Patrol();
@@ -74,8 +79,6 @@ public class WaspAggro : MonoBehaviour
     {
         float spawnDistance = 1.0f;
         float force = 3000.0f;
-        //Stop running and now attack
-        agent.SetDestination(transform.position);
 
         //INSERT ATTACK CODE HERE
         transform.LookAt(beeKeeper);

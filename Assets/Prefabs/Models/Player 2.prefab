@@ -642,7 +642,8 @@ MonoBehaviour:
   maxArmor: 4
   health: 0
   armor: 0
-  ahhhhh: {fileID: 8300000, guid: 4340ba21b2134284ca94f6a3311b71de, type: 3}
+  oof: {fileID: 8300000, guid: 60fb2fd812870284ca186fa2fb68d73a, type: 3}
+  ahhh: {fileID: 8300000, guid: e647e94920b9bc54987598a0fe57e3eb, type: 3}
 --- !u!1 &1446023006253918596
 GameObject:
   m_ObjectHideFlags: 0

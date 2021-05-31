@@ -10,7 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int armor;
 
-    public AudioClip ahhhhh;
+    public AudioClip oof;
+    public AudioClip ahhh;
     AudioSource src;
 
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        src.PlayOneShot(ahhhhh, 0.4f);
+        src.PlayOneShot(oof, 0.4f);
         if(armor > 0)
         {
             armor -= damage;
@@ -50,8 +51,9 @@ public class PlayerHealth : MonoBehaviour
         {
             // Dead
             Debug.Log("Player has died.");
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.buildIndex);
+
+            Time.timeScale = 0;
+            StartCoroutine(DeathSound());
         }
     }
 
@@ -64,5 +66,15 @@ public class PlayerHealth : MonoBehaviour
         }
         else
             armor = maxArmor;
+    }
+
+    private IEnumerator DeathSound()
+    {
+        src.PlayOneShot(ahhh, 0.5f);
+        yield return new WaitWhile(() => src.isPlaying);
+
+        Time.timeScale = 1;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 }
