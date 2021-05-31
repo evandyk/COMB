@@ -24,3 +24,8 @@ borpaSpin COMB
     C#
 #### Genre:
     Doom Style Single Player FPS
+
+#### Game Controls:
+    Movement: WASD
+    Weapon Switch: 1, 2, 3 or Mouse Scroll
+    Reload Gun: R
