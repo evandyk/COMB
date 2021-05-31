@@ -36,12 +36,16 @@ public class Gun : MonoBehaviour
         source.PlayOneShot(shotSound, 0.7f);
 
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        //if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if(Physics.SphereCast(fpsCam.transform.position, 1, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
+            Vector3 vectorToCollider = (hit.transform.position - fpsCam.transform.position);
+            vectorToCollider.Normalize();
+
+            if (target != null && (Vector3.Dot(vectorToCollider, fpsCam.transform.forward) > 0.98f))
             {
                 source.PlayOneShot(hitSound, 0.7f);
                 target.TakeDamage(weaponDamage, hit);
