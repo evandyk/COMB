@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         //get player kill count here
-        //player....
-        scoreText.text = "KILLS: " + "TBD";
+        var weps = player.GetComponentInChildren<WeaponSwitching>();
+        scoreText.text = "KILLS: " + weps.kills.ToString();
     }
 }
